@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Language Traffic Light — a guide to addressing people respectfully. Learn about intent vs. impact and which words to use, question, or avoid.">
+  <title>The Language Traffic Light</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="hero">
+    <div class="container">
+      <p class="hero-label">English Project · Inclusive Communication</p>
+      <h1>The Language Traffic Light</h1>
+      <p class="hero-subtitle">The right way to address people without offending them.</p>
+      <div class="hero-intro intent-section">
+        <h2 class="intent-heading">Intent vs. Impact</h2>
+        <p>
+          "Intent" is what you want to say in your head before you speak to someone. "Impact" is how the other person feels when they hear your words in real life. Sometimes you don't want to be mean at all, but your words still hurt them because they have different experiences and history than you. The impact is always much more important than your intent, because feelings are real and they stay with the person. Even if you had good heart, if someone feels bad from your words, that is what matters most.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="video-section" aria-labelledby="video-heading">
+      <div class="container">
+        <h2 id="video-heading" class="visually-hidden">Video guide</h2>
+        <div class="video-placeholder" role="img" aria-label="Video placeholder — guide coming soon">
+          <span class="play-button" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </span>
+          <span class="video-placeholder-label">Video coming soon</span>
+        </div>
+        <p class="video-caption">Watch our guide on understanding safe and offensive terms.</p>
+      </div>
+    </section>
+
+    <section class="traffic-light" aria-labelledby="traffic-light-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="traffic-light-heading">The Traffic Light System</h2>
+          <p>
+            When talking about or addressing people of color, some words are widely accepted,
+            some feel outdated, and some cause real harm. Here is a practical guide — not a perfect
+            rulebook, but a starting point for thoughtful conversation.
+          </p>
+        </header>
+
+        <!-- Traffic Light Mini-Game -->
+        <div class="mini-game">
+          <h3>Test your knowledge! Where does this word go?</h3>
+          <div class="traffic-lights-container">
+            <div class="game-light game-light--green" data-color="green" aria-label="Green zone" role="button" tabindex="0"></div>
+            <div class="game-light game-light--yellow" data-color="yellow" aria-label="Yellow zone" role="button" tabindex="0"></div>
+            <div class="game-light game-light--red" data-color="red" aria-label="Red zone" role="button" tabindex="0"></div>
+          </div>
+          <div class="game-card">
+            <h4>Click the correct zone for this word:</h4>
+            <div class="game-word" id="current-word">People of color</div>
+            <div class="game-feedback" id="game-feedback"></div>
+            <button class="next-word-btn" id="next-word-btn">Next Word</button>
+          </div>
+        </div>
+
+        <div class="zones">
+          <article class="zone zone--green">
+            <div class="accordion-header" onclick="toggleAccordion('green-content', this)">
+              <div class="zone-header">
+                <span class="zone-signal" aria-hidden="true"></span>
+                <h3>Green Zone</h3>
+                <p class="zone-tagline">Acceptable &amp; respectful</p>
+              </div>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content" id="green-content">
+              <div class="zone-description">
+                <p>
+                  These words are respectful and they show that you care about other people feelings. They show that you see the person normal and equal to everyone else in the world. If you know where they are from, just use their country name, it is always the best choice because it is specific and shows you know them. These words make everyone feel included and comfortable in the conversation without any bad feelings. When you say "people of color" or "Black people" or "Asian", it sounds good and polite to most people and they will appreciate your effort to be respectful.
+                </p>
+              </div>
+            <ul class="term-list">
+              <li><strong>People of color</strong> — good word to use when you talk about many people together in a respectful way, it is very common now.</li>
+              <li><strong>Black people</strong> — always write Black with big letter B when you talk about people, it shows respect to their culture.</li>
+              <li><strong>Asian</strong> — simple and respectful word for people from Asia, much better than old words that people used before.</li>
+              <li><strong>Country names</strong> — if you know the country like "Nigerian" or "Japanese" or "Indian" or "Brazilian", use that, it is the best way.</li>
+              <li><strong>Indigenous</strong> — word for the first people who lived in a place, like Native Americans or Aboriginal people in Australia.</li>
+              <li><strong>Latino / Latina</strong> — respectful words for people from Latin America, use the one the person prefers.</li>
+            </ul>
+            </div>
+          </article>
+
+          <article class="zone zone--yellow">
+            <div class="accordion-header" onclick="toggleAccordion('yellow-content', this)">
+              <div class="zone-header">
+                <span class="zone-signal" aria-hidden="true"></span>
+                <h3>Yellow Zone</h3>
+                <p class="zone-tagline">Use with caution — often outdated</p>
+              </div>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content" id="yellow-content">
+              <div class="zone-description">
+                <p>
+                  These words are from the past or they sound a bit strange now in modern times when we know better. It makes people feel like they are not the standard and they are different from "normal" people in society. It is better to not use them much because they can make a person feel weird and excluded from the group. Words like "minorities" or "non-white" make it sound like white people are the normal ones and everyone else is strange or different from them. When you use these words, people might think you don't understand much about the world today.
+                </p>
+              </div>
+            <ul class="term-list">
+              <li><strong>Minorities</strong> — this word is old now, it makes people feel small and not important in society.</li>
+              <li><strong>Non-white</strong> — this is not good because it says white is the normal and everyone else is not normal.</li>
+              <li><strong>Diverse people</strong> — sounds okay but not the best way to say it, try to be more specific about who you mean.</li>
+              <li><strong>Foreigners</strong> — can sound like they don't belong here, better to say where they are from exactly.</li>
+              <li><strong>Exotic</strong> — makes people sound like they are strange objects or animals, never use this for people.</li>
+            </ul>
+            </div>
+          </article>
+
+          <article class="zone zone--red">
+            <div class="accordion-header" onclick="toggleAccordion('red-content', this)">
+              <div class="zone-header">
+                <span class="zone-signal" aria-hidden="true"></span>
+                <h3>Red Zone</h3>
+                <p class="zone-tagline">Offensive — avoid entirely</p>
+              </div>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content" id="red-content">
+              <div class="zone-description">
+                <p>
+                  These words are very bad and offensive to many people around the world. They have a dark history from slavery and discrimination and they bring bad memories to families for many generations. Even if you hear them in rap songs, TikTok, or movies, never say them in real life because it is not your place to use them. You can hurt someone very much and you might not even understand why because you don't know their family history. Words like "colored people" or "Orientals" or slurs are from a time when people was treated very bad and we should not use them anymore in our time.
+                </p>
+              </div>
+            <ul class="term-list">
+              <li><strong>Colored people</strong> — very bad word from the past, never say this to anyone ever.</li>
+              <li><strong>Orientals</strong> — old offensive word that was used for Asian people in the past, use "Asian" instead.</li>
+              <li><strong>Racial slurs</strong> — any bad word about someone's race, do not say them ever in any situation even as joke.</li>
+              <li><strong>The N-word</strong> — the most offensive word in English, never say it even if you hear it in music from Black artists.</li>
+              <li><strong>Negro</strong> — very old and offensive word, never use this for Black people today.</li>
+            </ul>
+            <p class="zone-note">
+              Even if you hear these in songs or movies, it does not mean you can say them in real life to anyone.
+            </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-section" aria-labelledby="guide-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="guide-heading">Practical Guide: What if you make a mistake?</h2>
+          <p>
+            Everyone slips up — especially when navigating a second language. What matters is how
+            you respond in the moment. If you accidentally use a Yellow or Red Zone term, follow
+            these steps.
+          </p>
+        </header>
+        <ol class="guide-steps">
+          <li>
+            <strong>Say sorry fast.</strong>
+            Just say "I am sorry" and do not talk about it for 10 minutes or more. Do not make a big story about why you said it or how you learned it in school or from movies. Keep it short and simple because the other person does not want to hear your life story.
+          </li>
+          <li>
+            <strong>Don't make a big drama about it.</strong>
+            Do not cry or say "I am a bad person" or "I am so stupid", just move on with the conversation. The other person does not want to comfort you or make you feel better, they just want you to fix it and continue.
+          </li>
+          <li>
+            <strong>Correct the word.</strong>
+            Say the sentence again but use a Green zone word right away without waiting. For example, say "Black people" instead of the wrong word and continue talking like normal nothing happened. This shows you learned fast.
+          </li>
+          <li>
+            <strong>Remember it for next time.</strong>
+            Try to not do the same mistake tomorrow when you talk to other people in class or outside. Write it down in your phone notes if you need to remember it better for the future.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="faq-heading">Frequently Asked Questions</h2>
+          <p>
+            These are questions we heard from classmates and friends while researching this project.
+            The answers are starting points — not final rules for every situation.
+          </p>
+        </header>
+        <dl class="faq-list">
+          <div class="faq-item">
+            <dt>Why the words change?</dt>
+            <dd>
+              Because society change and we learn to be more respectful to each other over time as we grow. Words that were okay 20 years ago are not okay now because people understand more about history and feelings today. People want to be called in the right way that shows them respect and dignity as human beings. Language is always changing and we need to change with it if we want to be good people.
+            </dd>
+          </div>
+          <div class="faq-item">
+            <dt>Can I ask what word to use?</dt>
+            <dd>
+              Yes, it is better to ask than to guess and say a wrong word by accident that hurts someone. People like when you try to be respectful to them and they will help you learn the right way. Just ask "What word do you prefer?" and they will tell you with kindness because they see you are trying.
+            </dd>
+          </div>
+          <div class="faq-item">
+            <dt>What if I don't know if a word is bad?</dt>
+            <dd>
+              If you are not sure about a word, it is better to not use it at all and choose a different word that you know is safe. You can also look it up online or ask someone you trust before you say it in public to other people. It is okay to be careful and learn slowly, nobody expects you to know everything perfect.
+            </dd>
+          </div>
+          <div class="faq-item">
+            <dt>What if someone corrects me?</dt>
+            <dd>
+              If someone corrects you, just say thank you and don't feel bad about it at all. They are helping you learn and be better for the future, so be happy they told you. It is much better to learn now than to keep making the same mistake many times.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="sources" aria-labelledby="sources-heading">
+      <div class="container">
+        <h2 id="sources-heading">Sources &amp; Further Reading</h2>
+        <p class="sources-intro">
+          This project draws on established guidelines from universities and public institutions.
+          We encourage you to read the originals and keep learning.
+        </p>
+        <ol class="source-list">
+          <li>
+            <a href="https://www.tudublin.ie/explore/about-the-university/academic-affairs/enhancing-student-engagement-in-quality-enhancement/our-student-voice/resources-for-students/understanding-the-practices-of-edi/" target="_blank" rel="noopener noreferrer">
+              TU Dublin: Inclusive Language Guidelines (Intent vs. Impact)
+            </a>
+            <span class="source-desc">Explains why impact matters more than good intentions when language causes harm.</span>
+          </li>
+          <li>
+            <a href="https://www.nih.gov/nih-style-guide/race-national-origin" target="_blank" rel="noopener noreferrer">
+              NIH Style Guide: Race &amp; National Origin (Green Zone)
+            </a>
+            <span class="source-desc">Official guidance on respectful, specific language for race and ethnicity.</span>
+          </li>
+          <li>
+            <a href="https://www.apa.org/about/apa/equity-diversity-inclusion/language-guidelines" target="_blank" rel="noopener noreferrer">
+              APA Language Guidelines: Equity, Diversity, Inclusion (Suggested alternatives)
+            </a>
+            <span class="source-desc">Inclusive language principles and suggested alternatives to harmful terms.</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="about-research">
+        <h2 class="about-research-heading">About the Project</h2>
+        <p>
+          This project was made by Kyrylo and Jeremy for our English class at school this semester. We are not native speakers and we know it is hard to find the right words sometimes when you learn a new language like English. We read some rules from TU Dublin, NIH, and APA to make this small guide for our classmates and friends. We hope it helps everyone understand how to talk with more respect and avoid mistakes that can hurt people feelings without meaning to.
+        </p>
+      </div>
+      <p>The Language Traffic Light · An educational English project</p>
+      <p class="footer-note">Made to help us communicate with care — not to shame, but to learn together.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Traffic Light Mini-Game
+    const gameWords = [
+      { word: "People of color", zone: "green" },
+      { word: "Asian", zone: "green" },
+      { word: "Indigenous", zone: "green" },
+      { word: "Minorities", zone: "yellow" },
+      { word: "Non-white", zone: "yellow" },
+      { word: "Foreigners", zone: "yellow" },
+      { word: "Exotic", zone: "yellow" },
+      { word: "Colored people", zone: "red" },
+      { word: "Orientals", zone: "red" }
+    ];
+
+    let currentWordIndex = 0;
+    let correctAnswers = 0;
+    let totalAnswers = 0;
+    const currentWordElement = document.getElementById('current-word');
+    const gameFeedback = document.getElementById('game-feedback');
+    const nextWordBtn = document.getElementById('next-word-btn');
+    const gameLights = document.querySelectorAll('.game-light');
+
+    function updateWord() {
+      currentWordElement.textContent = gameWords[currentWordIndex].word;
+      gameFeedback.className = 'game-feedback';
+      gameFeedback.textContent = '';
+      gameLights.forEach(light => {
+        light.classList.remove('active', 'correct', 'wrong');
+      });
+    }
+
+    function checkAnswer(selectedColor) {
+      const correctZone = gameWords[currentWordIndex].zone;
+      const selectedLight = document.querySelector(`.game-light[data-color="${selectedColor}"]`);
+      
+      gameLights.forEach(light => light.classList.remove('active'));
+      selectedLight.classList.add('active');
+
+      totalAnswers++;
+
+      if (selectedColor === correctZone) {
+        selectedLight.classList.add('correct');
+        gameFeedback.className = 'game-feedback correct';
+        gameFeedback.textContent = 'Yes! You are right! Good job.';
+        correctAnswers++;
+      } else {
+        selectedLight.classList.add('wrong');
+        gameFeedback.className = 'game-feedback wrong';
+        gameFeedback.textContent = `Oops! No, this is a ${correctZone} zone word. Try again!`;
+      }
+
+      setTimeout(() => {
+        selectedLight.classList.remove('correct', 'wrong');
+      }, 600);
+    }
+
+    function showResult() {
+      const percentage = Math.round((correctAnswers / totalAnswers) * 100);
+      gameFeedback.className = 'game-feedback correct';
+      gameFeedback.innerHTML = `Game over! You got ${correctAnswers} out of ${totalAnswers} correct (${percentage}%).<br><br>Scroll down to see the Green Zone, Yellow Zone, and Red Zone for more details!`;
+      nextWordBtn.textContent = 'Play Again';
+      nextWordBtn.onclick = resetGame;
+    }
+
+    function resetGame() {
+      currentWordIndex = 0;
+      correctAnswers = 0;
+      totalAnswers = 0;
+      updateWord();
+      nextWordBtn.textContent = 'Next Word';
+      nextWordBtn.onclick = null;
+      nextWordBtn.addEventListener('click', nextWordHandler);
+    }
+
+    function nextWordHandler() {
+      if (currentWordIndex < gameWords.length - 1) {
+        currentWordIndex++;
+        updateWord();
+      } else {
+        showResult();
+      }
+    }
+
+    gameLights.forEach(light => {
+      light.addEventListener('click', () => {
+        const color = light.dataset.color;
+        checkAnswer(color);
+      });
+
+      light.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          light.click();
+        }
+      });
+    });
+
+    nextWordBtn.addEventListener('click', nextWordHandler);
+
+    // Accordion Toggle
+    function toggleAccordion(contentId, header) {
+      const content = document.getElementById(contentId);
+      const icon = header.querySelector('.accordion-icon');
+      
+      content.classList.toggle('open');
+      icon.classList.toggle('rotated');
+      
+      if (content.classList.contains('open')) {
+        icon.textContent = '−';
+      } else {
+        icon.textContent = '+';
+      }
+    }
+  </script>
+</body>
+</html>
