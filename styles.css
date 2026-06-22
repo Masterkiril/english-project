@@ -206,6 +206,15 @@ body {
   font-size: 0.9375rem;
 }
 
+.audio-player {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(44, 40, 37, 0.1);
+}
+
 /* --- Traffic light section --- */
 .traffic-light {
   padding: var(--space-lg) 0 var(--space-xl);
