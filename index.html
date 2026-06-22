@@ -21,7 +21,9 @@
       <div class="hero-intro intent-section">
         <h2 class="intent-heading">Intent vs. Impact</h2>
         <p>
-          "Intent" is what you want to say in your head before you speak to someone. "Impact" is how the other person feels when they hear your words in real life. Sometimes you don't want to be mean at all, but your words still hurt them because they have different experiences and history than you. The impact is always much more important than your intent, because feelings are real and they stay with the person. Even if you had good heart, if someone feels bad from your words, that is what matters most.
+          "Intent" is what you want to say in your head before you speak to someone. "Impact" is how the other person feels when they hear your words in real life. 
+          Sometimes you don't want to be mean at all, but your words still hurt them because they have different experiences and history than you. 
+          The impact is always much more important than your intent, because feelings are real and they stay with the person. Even if you had a good heart, if someone feels bad from your words, that is what matters most.
         </p>
       </div>
     </div>
@@ -49,7 +51,7 @@
           <h2 id="traffic-light-heading">The Traffic Light System</h2>
           <p>
             When talking about or addressing people of color, some words are widely accepted,
-            some feel outdated, and some cause real harm. Here is a practical guide — not a perfect
+            some feel outdated, and some cause real harm. Here is a practical guide, not a perfect
             rulebook, but a starting point for thoughtful conversation.
           </p>
         </header>
@@ -158,7 +160,7 @@
         <header class="section-header">
           <h2 id="guide-heading">Practical Guide: What if you make a mistake?</h2>
           <p>
-            Everyone slips up — especially when navigating a second language. What matters is how
+            Everyone makes mistakes: especially when you are speaking a second language. What matters is how
             you respond in the moment. If you accidentally use a Yellow or Red Zone term, follow
             these steps.
           </p>
@@ -189,8 +191,8 @@
         <header class="section-header">
           <h2 id="faq-heading">Frequently Asked Questions</h2>
           <p>
-            These are questions we heard from classmates and friends while researching this project.
-            The answers are starting points — not final rules for every situation.
+            These are questions we heard from friends while researching this project.
+            The answers are starting points and not final rules for every situation.
           </p>
         </header>
         <dl class="faq-list">
@@ -224,27 +226,26 @@
 
     <section class="sources" aria-labelledby="sources-heading">
       <div class="container">
-        <h2 id="sources-heading">Sources &amp; Further Reading</h2>
+        <h2 id="sources-heading">Sources</h2>
         <p class="sources-intro">
-          This project draws on established guidelines from universities and public institutions.
-          We encourage you to read the originals and keep learning.
+          This project is based on guidelines from universities and public institutions. You can read the original sources and continue learning.
         </p>
         <ol class="source-list">
           <li>
             <a href="https://www.tudublin.ie/explore/about-the-university/academic-affairs/enhancing-student-engagement-in-quality-enhancement/our-student-voice/resources-for-students/understanding-the-practices-of-edi/" target="_blank" rel="noopener noreferrer">
-              TU Dublin: Inclusive Language Guidelines (Intent vs. Impact)
+              TU Dublin: Inclusive Language Guidelines
             </a>
             <span class="source-desc">Explains why impact matters more than good intentions when language causes harm.</span>
           </li>
           <li>
             <a href="https://www.nih.gov/nih-style-guide/race-national-origin" target="_blank" rel="noopener noreferrer">
-              NIH Style Guide: Race &amp; National Origin (Green Zone)
+              NIH Style Guide: Race and National Origin 
             </a>
             <span class="source-desc">Official guidance on respectful, specific language for race and ethnicity.</span>
           </li>
           <li>
             <a href="https://www.apa.org/about/apa/equity-diversity-inclusion/language-guidelines" target="_blank" rel="noopener noreferrer">
-              APA Language Guidelines: Equity, Diversity, Inclusion (Suggested alternatives)
+              APA Language Guidelines: Equity, Diversity, Inclusion
             </a>
             <span class="source-desc">Inclusive language principles and suggested alternatives to harmful terms.</span>
           </li>
@@ -261,8 +262,7 @@
           This project was made by Kyrylo and Jeremy for our English class at school this semester. We are not native speakers and we know it is hard to find the right words sometimes when you learn a new language like English. We read some rules from TU Dublin, NIH, and APA to make this small guide for our classmates and friends. We hope it helps everyone understand how to talk with more respect and avoid mistakes that can hurt people feelings without meaning to.
         </p>
       </div>
-      <p>The Language Traffic Light · An educational English project</p>
-      <p class="footer-note">Made to help us communicate with care — not to shame, but to learn together.</p>
+      <p class="footer-note">Made to help us communicate with care and not to shame, but to learn together.</p>
     </div>
   </footer>
 
@@ -270,14 +270,14 @@
     // Traffic Light Mini-Game
     const gameWords = [
       { word: "People of color", zone: "green" },
+      { word: "Non-white", zone: "yellow", alternative: "People of color, specific communities" },
       { word: "Asian", zone: "green" },
-      { word: "Indigenous", zone: "green" },
-      { word: "Minorities", zone: "yellow" },
-      { word: "Non-white", zone: "yellow" },
-      { word: "Foreigners", zone: "yellow" },
-      { word: "Exotic", zone: "yellow" },
-      { word: "Colored people", zone: "red" },
-      { word: "Orientals", zone: "red" }
+      { word: "Chink", zone: "red", alternative: "Asian, Chinese, specific nationality" },
+      { word: "Native peoples of Canada", zone: "green" },
+      { word: "Foreigners", zone: "yellow", alternative: "International students, people from [country]" },
+      { word: "Exotic", zone: "yellow", alternative: "Unique, diverse, international" },
+      { word: "Colored people", zone: "red", alternative: "Black people, People of color" },
+      { word: "Minorities", zone: "yellow", alternative: "underrepresented groups, specific communities" }
     ];
 
     let currentWordIndex = 0;
@@ -300,17 +300,22 @@
     function checkAnswer(selectedColor) {
       const correctZone = gameWords[currentWordIndex].zone;
       const selectedLight = document.querySelector(`.game-light[data-color="${selectedColor}"]`);
+      const currentWord = gameWords[currentWordIndex];
       
       gameLights.forEach(light => light.classList.remove('active'));
       selectedLight.classList.add('active');
 
-      totalAnswers++;
-
       if (selectedColor === correctZone) {
         selectedLight.classList.add('correct');
         gameFeedback.className = 'game-feedback correct';
-        gameFeedback.textContent = 'Yes! You are right! Good job.';
+        
+        if (currentWord.alternative) {
+          gameFeedback.innerHTML = `Yes! You are right! Good job.<br><br>Better words to use: ${currentWord.alternative}`;
+        } else {
+          gameFeedback.textContent = 'Yes! You are right! Good job.';
+        }
         correctAnswers++;
+        totalAnswers++;
       } else {
         selectedLight.classList.add('wrong');
         gameFeedback.className = 'game-feedback wrong';
